@@ -118,6 +118,14 @@
       <AdditionalLibraryDirectories>$(SolutionDir)lib\sigil\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
     </Link>
+    <PostBuildEvent>
+      <Command>copy /y "$(SolutionDir)lib\sigil\glew32.dll" "$(OutDir)"
+copy /y "$(SolutionDir)lib\sigil\OpenAL32.dll" "$(OutDir)"
+copy /y "$(SolutionDir)lib\sigil\sigil.dll" "$(OutDir)"
+copy /y "$(SolutionDir)lib\sigil\wrap_oal.dll" "$(OutDir)"
+
+</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -138,6 +146,14 @@
       <AdditionalDependencies>raylib.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
     </Link>
+    <PostBuildEvent>
+      <Command>copy /y "$(SolutionDir)lib\sigil\glew32.dll" "$(OutDir)"
+copy /y "$(SolutionDir)lib\sigil\OpenAL32.dll" "$(OutDir)"
+copy /y "$(SolutionDir)lib\sigil\sigil.dll" "$(OutDir)"
+copy /y "$(SolutionDir)lib\sigil\wrap_oal.dll" "$(OutDir)"
+
+</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
