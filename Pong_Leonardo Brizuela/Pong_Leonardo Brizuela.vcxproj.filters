@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="..\src\Game.h" />
+    <ClInclude Include="..\src\objects\Ball.h">
+      <Filter>objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\objects\Paddle.h">
+      <Filter>objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\menu\Menu.h">
+      <Filter>menu</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\Main.cpp" />
+    <ClCompile Include="..\src\Game.cpp" />
+    <ClCompile Include="..\src\objects\Ball.cpp">
+      <Filter>objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\objects\Paddle.cpp">
+      <Filter>objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\menu\Menu.cpp">
+      <Filter>menu</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="objects">
+      <UniqueIdentifier>{996b1fea-c91b-4f61-8367-a323a9c93d20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="menu">
+      <UniqueIdentifier>{40a84576-984c-469a-b02e-bcadc1d5830e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
