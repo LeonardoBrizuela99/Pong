@@ -23,6 +23,8 @@
     <ClInclude Include="..\src\menu\Menu.h" />
     <ClInclude Include="..\src\objects\Ball.h" />
     <ClInclude Include="..\src\objects\Paddle.h" />
+    <ClInclude Include="Functions.h" />
+    <ClInclude Include="Struct.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\Game.cpp" />
@@ -30,6 +32,8 @@
     <ClCompile Include="..\src\menu\Menu.cpp" />
     <ClCompile Include="..\src\objects\Ball.cpp" />
     <ClCompile Include="..\src\objects\Paddle.cpp" />
+    <ClCompile Include="Functions.cpp" />
+    <ClCompile Include="Struct.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

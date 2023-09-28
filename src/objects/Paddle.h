@@ -1,3 +1,28 @@
+#pragma once
+#include "sl.h"
+#include"../Functions.h"
+
+struct Paddle
+{
+    float x;
+    float y;
+    float width;
+    float height;
+    float speed;
+    float lastHitTime;
+    float hitDuration;
+    Color hitColor;
+    Color color;
+};
+
+Paddle CreatePaddle(float positionX, Color color, Color hitColor);
+void MovePaddles(Paddle& leftPaddle, Paddle& rightPaddle);
+void UpdatePaddle(Paddle& leftPaddle, Paddle& rightPaddle);
+void CheckInputs(Paddle& leftPaddle, Paddle& rightPaddle);
+void DrawPaddle(Paddle paddle);
+Rectangle GetPaddleRect(Paddle paddle);
+
+
 //#pragma once
 //#include "raylib.h"
 //

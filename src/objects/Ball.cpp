@@ -1,3 +1,69 @@
+#include "sl.h"
+#include "Ball.h"
+#include "Paddle.h"
+#include <iostream>
+#include <ctime>
+
+using namespace std;
+
+void MoveBall(Ball& ball);
+void DrawBall(Ball& ball);
+void CollisionBall(Ball& ball);
+void PaddleBallCollisionLeft(Ball& ball, Paddle& leftPaddle);
+void PaddleBallCollisionRight(Ball& ball, Paddle& rightPaddle);
+
+void CalculateRandom(Ball& ball)
+{
+    int randomSpeed = slRandomBetween(100, 200);
+    int direction = slRandomBetween(0, 1);
+
+    ball.speedX = direction == 0 ? -randomSpeed : randomSpeed;
+
+    randomSpeed = slRandomBetween(100, 200);
+    direction = slRandomBetween(0, 1);
+
+    ball.speedY = direction == 0 ? -randomSpeed : randomSpeed;
+}
+
+Ball CreateBall()
+{
+    Ball ball;
+
+    CalculateRandom(ball);
+
+    ball.x = slGetScreenWidth() / 2;
+    ball.y = slGetScreenHeight() / 2;
+    ball.width = 10;
+    ball.height = 10;
+    ball.win = false;
+    ball.maxSpeed = 1000.0f;
+
+    return ball;
+}
+
+Rectangle GetRectBall(Ball& ball)
+{
+    return Rectangle{ ball.x, ball.y, ball.width, ball.height };
+}
+
+void DrawBall(Ball& ball)
+{
+    slRectangleFill(GetRectBall(ball), SL_BLACK);
+    slRectangleRoundedOutline(GetRectBall(ball), 15.0f, 10, 5.0f, SL_COLOR(Foreground::BLACK, 1.0f));
+}
+
+void UpdateBall(Ball& ball)
+{
+    MoveBall(ball);
+}
+
+void MoveBall(Ball& ball)
+{
+    ball.x += ball.speedX * slGetDeltaTime();
+    ball.y += ball.speedY * slGetDeltaTime();
+}
+
+
 //#include"raylib.h"
 //#include"Ball.h"
 //#include"Paddle.h"
